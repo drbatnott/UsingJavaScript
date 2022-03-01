@@ -6,6 +6,33 @@
     <title>Using JavaScript</title>
 </head>
 <body>
+    <h1 id="demo1">Here Come the Javascript</h1>
+    <p id="demo2">This text will now have variables added </p>
+    <h2 id="demo3">The usual suspects </h2>
+    <p id="demo4">The type of names[0] is </p>
+    <script>
+        /*
+         * The following line will replace the inner HTML of Demo 1
+         * */
+        document.getElementById("demo1").innerHTML = "Hello JavaScript World";
+        let x = 1;
+        var y = 2;
+        const z = 3;
+        y = x + z;
+        // The following line will concatenate the new string onto the original string
+        document.getElementById("demo2").innerHTML += "x " + x + " y " + y + " z " + z;
+        const names = ["fred", "john", "paul", "ringo"];
+        names[0] = 0;
+        for (x = 0; x < 4; x++) {
+            document.getElementById("demo3").innerHTML += " " + names[x];
+        }
+        document.getElementById("demo4").innerHTML += typeof (names[0]) + " but the type of names is " + typeof (names);
+    </script>
 
+    <img src="Gradient.png" width="250" id="blue" /><br />
+    <button onclick="document.getElementById('blue').src='Gradient1.png'">Image 2</button>
+    <button onclick="document.getElementById('blue').src='Gradient.png'">Image 1</button><br />
+    <button onclick="document.getElementById('demo1').style.fontSize = '40px'">Big Font</button>
+    <button onclick="document.getElementById('demo1').style.fontSize = '20px'">Small Font</button>
 </body>
 </html>
