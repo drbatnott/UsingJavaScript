@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Using JavaScript Iteration</title>
+</head>
+<body>
+    <h1 id="demo1">Here Come the Javascript</h1>
+    <p id="demo2">This text will now have variables added </p>
+    <h2 id="demo3">The usual suspects </h2>
+    <p id="demo4">The type of names[0] is </p>
+    <script>
+        /*
+         * The following line will replace the inner HTML of Demo 1
+         * */
+        const things = ["fred", "bicycle", "footpump", "green glass gas tube"];
+        
+        document.getElementById("demo1").innerHTML = things;
+        let txt = "";
+        things.forEach(myFunction);
+        document.getElementById("demo2").innerHTML = txt;
+        function myFunction(value, index, array) {
+            txt += value + "<br/>";
+        }
+    </script>
+
+
+    <a href="index.html">Return to Index</a>
+</body>
+</html>
