@@ -4,6 +4,20 @@
 <head>
     <meta charset="utf-8" />
     <title>Using JavaScript Iteration</title>
+    <script>
+        function myFunction(value, index, array) {
+            txt += value + "<br/>";
+        }
+
+        function myFunctionArray(array) {
+            txt1 += array + "<br/>";
+        }
+
+        function myFunctionValueAndIndex(value, index) {
+            txt2 += "Element " + index + " is " + value + "<br/>";
+        }
+
+    </script>
 </head>
 <body>
     <h1 id="demo1">Here Come the Javascript</h1>
@@ -11,21 +25,23 @@
     <h2 id="demo3">The usual suspects </h2>
     <p id="demo4">The type of names[0] is </p>
     <script>
-        /*
-         * The following line will replace the inner HTML of Demo 1
-         * */
+        
         const things = ["fred", "bicycle", "footpump", "green glass gas tube"];
         
         document.getElementById("demo1").innerHTML = things;
         let txt = "";
         things.forEach(myFunction);
         document.getElementById("demo2").innerHTML = txt;
-        function myFunction(value, index, array) {
-            txt += value + "<br/>";
-        }
+        let txt1 = "";
+        things.forEach(myFunctionArray);
+        document.getElementById("demo3").innerHTML = txt1;
+        let txt2 = "";
+        things.forEach(myFunctionValueAndIndex);
+        document.getElementById("demo4").innerHTML = txt2;
+
     </script>
 
 
-    <a href="index.html">Return to Index</a>
+    <a href="mapping.html">Mapping Next!</a>
 </body>
 </html>

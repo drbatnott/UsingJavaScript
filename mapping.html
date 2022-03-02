@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Using JavaScript Iteration</title>
+    <script>
+        //value ** 2 means raise value to the power 2 - i.e. square it
+        function mySquareMapFunction(value, index, array) {
+            return value ** 2;
+        }
+
+        function myIndexMapFunction(value, index, array) {
+            return value ** index;
+        }
+
+        function myRootMapFunction(value, index, array) {
+            return value ** -index;
+        }
+    </script>
+</head>
+<body>
+    <h1 id="demo1">Here Come the Javascript</h1>
+    <p id="demo2">This text will now have variables added </p>
+    <h2 id="demo3">The usual suspects </h2>
+    <p id="demo4">The type of names[0] is </p>
+    <script>
+        
+        const numbers = [16, 8, 125, 4, 32];
+        document.getElementById("demo1").innerHTML = numbers;
+        const numbersSquared = numbers.map(mySquareMapFunction);
+        document.getElementById("demo2").innerHTML = numbersSquared;
+        const numbersToIndex = numbers.map(myIndexMapFunction);
+        document.getElementById("demo3").innerHTML = numbersToIndex;
+        const numbersRooted = numbers.map(myRootMapFunction);
+        document.getElementById("demo4").innerHTML = numbersRooted;
+    </script>
+    <a href="index.html">Back to Index</a><a href="filter.html">On To Filters</a>
+</body>
+</html>
