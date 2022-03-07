@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Using JavaScript Iteration</title>
+    <script>
+       
+
+    </script>
+</head>
+<body>
+    <h1 id="demo1">This is a list of types </h1>
+    <h1 id="demo2">In order of age </h1>   
+    <h1 id="demo3">The colours are </h1>
+    <h1 id="demo4">Sorted by model </h1>
+    <script>
+        const myCar = {
+            type: "Fiat", model: "500", color: "peppermint", year: 2019, fullDescription: function () { return this.type + " " + this.model; }
+        };
+        const nigelsBike = { type: "Yamaha", model: "ThunderAce 1000", color: "blue", year: 1999, fullDescription : function() { return this.type + " " + this.model; }};
+        const edsCar = { type: "Honda", model: "Jazz", color: "light blue", year: 2011, fullDescription : function(){ return this.type + " " + this.model; } };
+        const vehicles = [myCar, nigelsBike, edsCar];
+        document.getElementById("demo1").innerHTML += myCar.type + " " + nigelsBike.type + " " + edsCar.type;
+        vehicles.sort(function (a, b) { return a.year - b.year });
+        document.getElementById("demo2").innerHTML += vehicles[0].type + " " + vehicles[1].type + " " + vehicles[2].type;
+        document.getElementById("demo3").innerHTML += edsCar["color"] + " " + nigelsBike["color"] + " " + myCar["color"];
+        vehicles.sort(function (a, b) {
+            let x = a.type.toLowerCase();
+            let y = b.type.toLowerCase();
+            if (x < y) { return -1; }
+            if (x > y) { return 1; }
+            return 0;
+        });
+        document.getElementById("demo4").innerHTML += vehicles[0].fullDescription() + " " + vehicles[1].fullDescription() + " " + vehicles[2].fullDescription();
+    </script>
+    <a href="index.html">Back to Index</a> <a href="mapping.html">Back to mapping page</a> <a href="filter.html">Back to filter page</a><a href="reduce.html">Back to reduce page</a>
+    <br/><a href="math.html">Back to Math</a>
+</body>
+</html>
