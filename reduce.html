@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Using JavaScript Iteration</title>
+    <script>
+        //return only values < 
+        function myConcatFunction(total,value, index, array) {
+            return total + " " + value;
+        }
+        function mySumFunction(total, value) {
+            return total + value;
+        }
+        function myMinimumFunction(mini, value) {
+            if (value < mini)
+                return value;
+            else
+                return mini;
+        }
+
+    </script>
+</head>
+<body>
+    <h1 id="demo1">Here Come the Javascript</h1>
+    <p id="demo2">This text will now have variables added </p>
+    <h2 id="demo3">The usual suspects </h2>
+    <p id="demo4">The type of names[0] is </p>
+    <h3 id="demo5">For the reversed string set</h3>
+    <p id="demo6">To display the minimum</p>
+    <h1 id="demo7">To display the sorted array of strings</h1>
+    <p id="demo8">For the sorted numbers</p>
+    <h2 id="demo9">Numbers Reversed</h2>
+    <p id="demo10">Properly Sorted Numbers</p>
+    <script>
+        
+        const stringThings = ["first", 8, "cat" , 4, "last"];
+        document.getElementById("demo1").innerHTML = stringThings;
+        // the reduce function is an inbuilt JavaScript function - iterator
+        const stringThingsReduced = stringThings.reduce(myConcatFunction);
+        document.getElementById("demo2").innerHTML = stringThingsReduced;
+        const numberThings = [10, 5, 7, 14, 3, 18];
+        const numberSum = numberThings.reduce(mySumFunction);
+        document.getElementById("demo3").innerHTML = numberSum;
+        document.getElementById("demo4").innerHTML = numberThings;
+        const reversedStringSet = stringThings.reduceRight(myConcatFunction);
+        document.getElementById("demo5").innerHTML = reversedStringSet;
+        const min = numberThings.reduceRight(myMinimumFunction);
+        document.getElementById("demo6").innerHTML = "Minimum is " + min;
+        const sortedStrings = stringThings.sort();
+        document.getElementById("demo7").innerHTML = sortedStrings;
+        const sortedNumbers = numberThings.sort();
+        document.getElementById("demo8").innerHTML = sortedNumbers;
+        const reversedNumbers = sortedNumbers.reverse();
+        for (x = 0; x < reversedNumbers.length; x++)
+            document.getElementById("demo9").innerHTML += " " + reversedNumbers[x];
+        const properlySortedNumbers = numberThings.sort(function (a, b) { return a - b });
+        for (x = 0; x < properlySortedNumbers.length; x++)
+            document.getElementById("demo10").innerHTML += " " + properlySortedNumbers[x];
+    </script>
+    <a href="index.html">Back to Index</a> <a href="mapping.html">Back to mapping page</a> <a href="filter.html">Back to filter page</a><a href="math.html">On to math page</a>
+</body>
+</html>

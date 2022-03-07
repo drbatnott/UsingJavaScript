@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Using JavaScript Iteration</title>
+    <script>
+       
+
+    </script>
+</head>
+<body>
+    <h1 id="demo1">This is the value of pi</h1>
+    <p id="demo2">The value of E is </p>
+    <h2 id="demo3">The array is </h2>
+    <p id="demo4">The maximum in this array is </p>
+    <h3 id="demo5">The minimum is </h3>
+    <p id="demo6">To display the wrong Max </p>
+    
+    <script>
+        var v = Math.PI;
+        document.getElementById("demo1").innerHTML += " " + v;
+        var e = Math.E;
+        document.getElementById("demo2").innerHTML += " " + e;
+        const numbers = [10, 5, 7, 14, 3, 18];
+        let maxNumber = myArrayMax(numbers);
+        let minNumber = myArrayMin(numbers);
+        let badMax = myBadMax(numbers);
+        document.getElementById("demo3").innerHTML += numbers;
+        document.getElementById("demo4").innerHTML += maxNumber;
+        document.getElementById("demo5").innerHTML += minNumber;
+        document.getElementById("demo6").innerHTML += badMax;
+        function myArrayMax(arr) {
+            return Math.max.apply(null, arr);
+        }
+        function myArrayMin(arr) {
+            return Math.min.apply(null, arr);
+        }
+        function myBadMax(arr) {
+            return Math.max.apply(arr);
+        }
+    </script>
+    <a href="index.html">Back to Index</a> <a href="mapping.html">Back to mapping page</a> <a href="filter.html">Back to filter page</a><a href="reduce.html">Back to reduce page</a>
+    <br/><a href="objects.html">On to objects</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Using JavaScript Iteration</title>
+    <script>
+        //return only values < 
+        function myLTFunction(value, index, array) {
+            return value < 32;
+        }
+        function myGTFunction(value, index, array) {
+            return value > 32;
+        }
+        function myInRangeFunction(value, index, array) {
+            return value > 8 && value < 125;
+        }
+    </script>
+</head>
+<body>
+    <h1 id="demo1">Here Come the Javascript</h1>
+    <p id="demo2">This text will now have variables added </p>
+    <h2 id="demo3">The usual suspects </h2>
+    <p id="demo4">The type of names[0] is </p>
+    <script>
+        
+        const numbers = [16, 8, 125, 4, 32];
+        document.getElementById("demo1").innerHTML = numbers;
+        const numbersLT32 = numbers.filter(myLTFunction);
+        document.getElementById("demo2").innerHTML = numbersLT32;
+        const numbersGT32 = numbers.filter(myGTFunction);
+        document.getElementById("demo3").innerHTML = numbersGT32;
+        const numbersInRange = numbers.filter(myInRangeFunction);
+        document.getElementById("demo4").innerHTML = numbersInRange;
+    </script>
+    <a href="index.html">Back to Index</a> <a href="mapping.html">Back to mapping page</a> <a href="reduce.html">On to reduce page</a>
+</body>
+</html>
